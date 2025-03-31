@@ -1,0 +1,4 @@
+ipykernel
+modal
+requests
+openai
