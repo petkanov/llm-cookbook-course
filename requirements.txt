@@ -2,3 +2,6 @@ ipykernel
 modal
 requests
 openai
+sentence_transformers
+umap-learn
+plotly

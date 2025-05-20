@@ -1,0 +1,130 @@
+[Intro Slide: Data Collection and Preparation – Where it All Begins]
+
+Hey everyone, welcome to this section where we will start unpacking of what’s really going on inside the so called term - "artificial intelligence",
+and especially - large language models, that most of us by now, can not imagine working or live without.
+
+This term we hear and see on every single article, on every video, every news, like everything and  
+everywhere nowadays is spammed with these two letters "A.I.". So much hype, it's just crazy.
+There are even poeple for which this even looks like a some sort of a mysterious inteligent entity that is living somewhere in a box! 
+But once we drill down into the reality behind the "AI" label and strip away all the marketing hype 
+- you will see there is absolutely nothing intelligent about it. 
+These models in their original base form are not reasoning, they are not having insights or understanding the world like we do. 
+In its essence under the hood - It's just a sophisticated statistical calculator that is spitting off the next most likely word to follow.
+
+So what’s really happening and where does it all begin?
+Inside the LLM, it’s all about predicting the next word — well, actually, not even the whole word. 
+Most of the time, it’s just a fragment of a word, that is called a token. 
+And each token corresponds to a number. And the model’s job is to spit out one number at a time 
+using statistical mathematics, based on everything it has already predicted prior to that word.
+So the main task of LLM is to predict the next token, based on all previously predicted tokens.
+
+[Slide: “AI” = statistical prediction, not human thinking]
+
+There’s absolutely no actual thinking happening — just an advanced pattern matching and probability calculations.
+So by the end of these lessons, you’ll see for yourself exactly how these systems work.
+You will understand not only how this immitation of an intelligent output is generated, 
+but also how you can use these tools in your own projects, so that you can build applications that are smart, 
+extremely powerful and can make a real difference in the world.
+
+Now let's start our AI exploration journey and together, we are going to debunk 
+the myth of intelligence in this "AI" Marketing term — and, more importantly,
+we will learn how to use these tools true power for our own benefit.
+
+[Natural pause. Shift to Section 1.]
+
+So let’s begin with the very first step: 
+We need somehow to teach this computer program, or a model, to speak a new language — and not just perfectly, 
+but as richly and creatively as possible. How how would you do that?
+You wouldn’t just throw them a single book, or make them listen to the same conversation over and over.
+Instead, you’d expose them to all kind of books, news articles, blogs, scripts, casual chats — 
+pretty much every peace of text that you could get your hands on.
+The more diverse, comprehensive, and high-quality the text content is, the better our program's eventual language skills will be.
+
+[Show analogy visual – person surrounded by books, magazines, web pages]
+
+So now we got our first problem - how do we actually collect and prepare that massive amount of text that our model will learn from?
+
+And We are talking about collecting data in the scale of tens of terabytes, that contains hundreds of billions of words.
+The most famous and available example of something that we are looking for - is the FineWeb dataset, thats managed by Hugging Face.
+It’s exactly what we need - a filtered, high quality set of internet text that weighs in at around 44 terabytes.
+which by today's measures it's actually really not that much.
+But how did they do it and what is it and where does all this data even come from?
+
+[Slide: FineWeb by Hugging Face – 44TB of filtered text]
+
+So most of it originates from what’s called the Common Crawl.
+Think of Common Crawl as the giant web archive of our time.
+Since i think 2007, this Common Crawl has been systematically reading and archiving the public internet.
+And by now, it has crawled nearly 3 billion web pages.
+But this isn’t just about website addresses — no, - it's theirs entire content: which is articles, documentation, forums, chats and more.
+
+[Visual: Illustration of a web crawler traversing the internet]
+
+But of course, not every peace of internet text is useful, or even worth feeding into our model.
+Raw web data is reallly messy. Think of this - it includes spam, duplicated copy paste pages, messed up low-quality content, 
+and of course - texts in many many different languages. 
+So, now we need to clean and filter all this data carefully.
+
+[Slide: Keyword – Filtering: Making Raw Data Usable]
+
+And we arrived at our first step, which is - URL blocklists.
+
+Think of it as a gitignore file in which you would write all the files or directories that you do not want to include in your commits.
+But in Common Crawl case it's a file that includes website addresses, the content of which it will exclude from crawling and scraping.
+And why do we want to do this? 
+That's because all those websites from that list are known for malware, spam, adult content, or whatever else unwanted material.
+
+[Visual: Red “block sign” over malicious or spammy web pages]
+
+Ok, so we managed yo avoid a few forbidden websites, we scraped the others and now we got all that websites data.
+So whats next? 
+Next we need to extract the actual text from HTML markup.
+And as you know, the Web content is wrapped up in a lot of code — HTML, JavaScript, CSS.
+What we need is to strip all that away, so that we get the text that people actually read.
+
+[Screen demo: HTML page side by side with extracted clean text]
+
+Then comes language filtering.
+Typically, we want the majority of our dataset to be in English, since that is where our model is expected to be the most fluent in.
+A common threshold is to require that at least 65% of a website content should be in English in order for it's content to be included.
+
+[Slide: Language filtering – Pie chart: >65% English]
+
+Okay, now we got a text, we filtered away all the unnecessary code and data. 
+And now we ended up with a nice and clean english text only. 
+But we’re still not finished. No Sir.
+
+Many web pages are copied and republished across sites - Our favorite copy-paste action, right. 
+So now we need to perform the de-duplication process.
+To do this we will run an algorithms to remove not only repeated text fragments but even near-duplicate documents.
+This will later on help our model to grasp general rules from that data, so it can generalize and solve new situations instead of just memorizing old answers.
+We need to make sure that our model can learn underlying principles, and not just specific examples.
+
+[Visual: Duplicate documents being filtered out]
+
+So after we've done all this filtration, what is left?
+The end goal is a massive, diverse, and high-quality collection of texts that will serve as
+a foundation that is broad enough to teach a model about everything 
+from Shakespeare to Stack Overflow, from medical research to sci-fi fan fiction.
+It’s not just a size that matters, but also quality and breadth.
+
+[Recap Slide: Data pipeline – Raw crawl → Filtered text → Large, diverse, high-quality corpus]
+
+But why go to all this effort?
+Well because a well-built language model learns not just words, but also context, common sense and even 
+hidden connections like underlying relationships between Words and phrases or ideas and concepts.
+
+And all of this thanks to starting off from an excellent data.
+
+[Cut to: Presenter on camera]
+
+So in summary, developing a state-of-the-art language model begins with the painful, slow, and costly process of scraping, 
+filtering, and anonymizing vast amounts of text on the scale of the entire internet.
+
+And without this foundation, even the most advanced neural networks would be lost for words — quite literally.
+
+[Outro Slide: Up Next – How is all this data represented and visualized?]
+
+Well, great, thank you for tuning in and in the next video, we will see what happens next, after we’ve got this gigantic digital library:
+Like how do we actually represent all this text so that a computer Program, our model can start learning from it?
+Soo see you later and don't go too far away..   
