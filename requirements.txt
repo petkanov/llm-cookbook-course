@@ -5,3 +5,7 @@ openai
 sentence_transformers
 umap-learn
 plotly
+manim
+manim-slides
+#manim-ipython
+jupyterlab
