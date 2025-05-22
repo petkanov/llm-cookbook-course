@@ -38,12 +38,12 @@ Think of it as a Highly advanced statistical calculator that was merged with the
 Which in the end will not do anything on its own until you press the button.
 So The model by itself is absolutely passive file of Archived data In form of mathematical matrices.
 
-Okay, we got it, it's sort of a zip file, but what's inside it? 
-How is it going to conquer the world, right? Or at least make that impression.
+Okay, we got it, you say - it's sort of a zip file, but what's inside it? 
+How is it going to conquer the world, right? Or at least make such impression to some people.
 So Inside the Large language models, it's all about predicting the next word — well, actually, not even the whole word. 
 Most of the time, it's just a fragment of a word, that is called a token. 
 And each token corresponds to a number. And the model's job is to spit out one number at a time 
-using statistical mathematics. It does this based on everything it has already predicted prior to that word.
+using statistical mathematics. Ant It does this based on everything it has already predicted prior to that word.
 So the main task of LLM is to predict the next token, based on all previously predicted tokens.
 
 [Visual: Close-up animation of a sentence being typed, but each word appears as a sequence of colored blocks (tokens). Each block flashes as it is "predicted".]
@@ -53,10 +53,10 @@ So the main task of LLM is to predict the next token, based on all previously pr
 [Slide: "AI" = statistical prediction, not human thinking]
 
 There's absolutely no actual thinking happening — just an advanced pattern matching and probability calculations.
-So by the end of these lessons, you'll see for yourself exactly how these systems work.
+And by the end of these lessons, you'll see for yourself exactly how these systems work internaly.
 You will understand not only how this imitation of an intelligent output is generated, 
 but also how you can use these tools in your own projects, so that you can build applications that are smart, 
-extremely powerful and can make a real difference in the world.
+extremely powerful and can make a real difference in the fast changing world.
 
 [Visual: Split screen. Left side: a human brain with lightbulbs and creative ideas around it. Right side: a robot that looks like a mix between a calculator and a robot (robotic body with calculator buttons, display, and mechanical features), surrounded by numbers, graphs, and data visualizations. Add the text: "Pattern matching, not thinking". Make sure the human brain is only on the left, and the robot-calculator hybrid is only on the right, with no brain elements on the right side.]
 
@@ -64,7 +64,7 @@ extremely powerful and can make a real difference in the world.
 
 Now let's start our AI exploration journey and together, we are going to debunk 
 the myth of intelligence in this "AI" Marketing term — and, more importantly,
-we will learn how to use these tools' true power for our own benefit.
+we will learn how to use these tools true power for our own benefit.
 
 [Natural pause. Shift to Section 1.]
 
@@ -76,21 +76,25 @@ but as richly and creatively as possible. How how would you do that?
 You wouldn't just throw them a single book, or make them listen to the same conversation over and over.
 Instead, you'd expose them to all kinds of books, news articles, blogs, scripts, casual chats — 
 pretty much every piece of text that you could get your hands on.
-The more diverse, comprehensive, and high-quality the text content is, the better our program's eventual language skills will be.
+The more diverse, comprehensive, and high-quality the text content is, 
+the better our program's eventual language skills will be.
 
 [Visual: Person (cartoon or real) surrounded by a swirling cloud of books, newspapers, web pages, chat bubbles, and scripts.]
 
-So now we got our first problem - how do we actually collect and prepare that massive amount of text that our model will learn from?
+So now we got our first problem - how do we actually collect and prepare that massive amount of text 
+that our model will learn from?
 
 [Visual: Giant funnel graphic. At the top: icons for books, websites, forums, chats. At the bottom: a hard drive labeled "Training Data".]
 
 [Manim: Visualization of exponential growth curve showing data scale, with animated counter displaying gigabytes growing to terabytes, alongside visualization of token count growing to billions.]
 
-And we are talking about collecting data in the scale of tens of terabytes, that contains hundreds of billions of words.
-The most famous and available example of something that we are looking for - is the FineWeb dataset, that's managed by Hugging Face.
+And we are talking about collecting data in the scale of tens or even hundreds of terabytes, 
+that contains thousands of billions of words.
+The most famous and available example of something that we are looking for - 
+is the FineWeb dataset, that's managed by Hugging Face.
 It's exactly what we need - a filtered, high quality set of internet text that weighs in at around 44 terabytes.
 which by today's measures it's actually really not that much.
-But how did they do it and what is it and where does all this data even come from?
+But how did they do it and what's in it and where does all this data even come from?
 
 [Slide: FineWeb by Hugging Face – 44TB of filtered text]
 [Visual: Screenshot of the FineWeb dataset page on Hugging Face. Overlay: "44TB" in bold.]
@@ -106,8 +110,10 @@ But this isn't just about website addresses — no, - it's their entire content:
 [Manim: Graph theory visualization showing a network of interconnected nodes representing websites, with crawler paths highlighted as they traverse the graph, with counters tracking visited pages and data collected.]
 
 But of course, not every piece of internet text is useful, or even worth feeding into our model.
-Raw web data is really messy. Think of this - it includes spam, duplicated copy-paste pages, messed up low-quality content, 
+Raw web data is really messy. Think of this - it includes spam, 
+duplicated copy-paste pages, messed up low-quality content, 
 and of course - texts in many, many different languages. 
+
 So, now we need to clean and filter all this data carefully.
 
 [Visual: Messy pile of documents, some with red Xs (spam, duplicates, foreign languages), others with green checks (good content).]
@@ -115,11 +121,14 @@ So, now we need to clean and filter all this data carefully.
 [Slide: Keyword – Filtering: Making Raw Data Usable]
 
 And we arrived at our first step, which is - URL blocklists.
+Think of it as a gitignore file in which you would write all the files or directories 
+that you do not want to include in your commits.
+But in Common Crawl case it's a file that includes website addresses, 
+the content of which it will exclude from crawling and scraping.
 
-Think of it as a gitignore file in which you would write all the files or directories that you do not want to include in your commits.
-But in Common Crawl case it's a file that includes website addresses, the content of which it will exclude from crawling and scraping.
 And why do we want to do this? 
-That's because all those websites from that list are known for malware, spam, adult content, or whatever else unwanted material.
+That's because all those websites from that list are known for malware, spam, adult content, 
+or whatever else unwanted material.
 
 [Visual: List of URLs on screen, some highlighted in red and crossed out. Overlay: "BLOCKED" stamp.]
 
@@ -134,22 +143,25 @@ What we need is to strip all that away, so that we get the text that people actu
 [Screen demo: Split screen. Left: Raw HTML code. Right: Clean, readable text. Animation: HTML tags fade away, leaving just the text.]
 
 Then comes language filtering.
-Typically, we want the majority of our dataset to be in English, since that is where our model is expected to be the most fluent in.
-A common threshold is to require that at least 65% of a website content should be in English in order for its content to be included.
+Typically, we want the majority of our dataset to be in English, 
+since that is where our model is expected to be the most fluent in.
+A common threshold is to require that at least 65% of a website content should be in English 
+in order for its content to be included.
 
 [Slide: Language filtering – Pie chart: >65% English]
 [Visual: Pie chart animation showing a slice labeled "English" growing to 65% or more.]
 
 [Manim: Statistical sampling visualization showing how language detection algorithms work with confidence intervals and thresholds, with mathematical notation for statistical significance.]
 
-Okay, now we got a text, we filtered away all the unnecessary code and data. 
+Okay, cool, now we got a text, we filtered away all the unnecessary code and data. 
 And now we ended up with a nice and clean English text only. 
 But we're still not finished. No Sir.
 
 Many web pages are copied and republished across sites - Our favorite copy-paste action, right. 
 So now we need to perform the de-duplication process.
-To do this we will run algorithms to remove not only repeated text fragments but even near-duplicate documents.
-This will later on help our model to grasp general rules from that data, so it can generalize and solve new situations instead of just memorizing old answers.
+And To do this we will run algorithms to remove not only repeated text fragments but even near-duplicate documents.
+This will later on help our model to grasp general rules from that data, 
+so it can generalize and solve new situations instead of just memorizing old answers.
 We need to make sure that our model can learn underlying principles, and not just specific examples.
 
 [Visual: Illustration of two nearly identical documents. One is deleted, the other remains. Overlay: "De-duplication".]
@@ -166,8 +178,9 @@ It's not just a size that matters, but also quality and breadth.
 [Visual: Flowchart Illustration. Step 1: Raw crawl (messy web). Step 2: Filtering (blocklists, language, deduplication). Step 3: Final dataset (books, code, articles, etc.)]
 
 But why go to all this effort?
-Well because a well-built language model learns not just words, but also context, common sense and even 
-hidden connections like underlying relationships between words and phrases or ideas and concepts.
+Well because a well-built language model learns not just words, 
+but also context, common sense and even hidden connections 
+like underlying relationships between words and phrases or ideas and concepts.
 
 [Visual: Network diagram showing words and concepts connected by lines, some lines glowing to show "hidden connections".]
 
@@ -178,7 +191,7 @@ And all of this thanks to starting off from an excellent data.
 [Cut to: Presenter on camera]
 
 So in summary, developing a state-of-the-art language model begins with the painful, slow, and costly process of scraping, 
-filtering, and anonymizing vast amounts of text on the scale of the entire internet.
+filtering, and otherwise processing vast amounts of text on the scale of the entire internet.
 
 And without this foundation, even the most advanced neural networks would be lost for words — quite literally.
 
@@ -187,6 +200,8 @@ And without this foundation, even the most advanced neural networks would be los
 
 [Manim: Final mathematical animation showing the entire pipeline from raw text to token vectors to neural network processing, with mathematical notations for each transformation step.]
 
-Well, great, thank you for tuning in and in the next video, we will see what happens next, after we've got this gigantic digital library:
-Like how do we actually represent all this text so that a computer Program, our model can start learning from it?
-Soo see you later and don't go too far away..   
+And with this I want to thank you for tuning in and in the next video, we will see what happens next, 
+after we've got this gigantic digital library:
+Like how do we actually represent all this text 
+so that a computer Program, our model can start learning from it?
+Soo see you later and don't Drift too far away..   
