@@ -21,20 +21,22 @@ If you’re not actively using AI in your daily work, you may find yourself left
 
 [Manim: Show a probability distribution curve that morphs as words are generated. As one word appears, the curve shifts to show the changing probability distribution for the next possible tokens.]
 But let's get back to our main story.
- So what's really happening inside the LL4Ms - the main driving force powering the AI revolution? 
+So what's really happening inside the LL4Ms - the main driving force powering the AI revolution? 
 Where does this process actually start? 
 How does a simple piece of text get transformed into what feels like an intelligent response? 
 Let's explore where it all begins.
 
 The first important distinction we need to make clear is that the model itself—like GPT-4o 
-and the application that users interact with—like ChatGPT, which uses this model—are very different things.
+and the application that users interact with—like ChatGPT, which uses this model — are very different things.
 ChatGPT, or any similar application, consists of many additional layers that do not exist within the model itself. 
-These include features like memory, agents, tools, and many other components that make Applications like ChatGPT 
-so useful, intelligent and fluent.
+These include features like memory, agents, tools, context management and many other components 
+that make Applications like ChatGPT so useful, intelligent and fluent.
+
 The LLM model itself is more of a like extremely sophisticated archive of the entire internet. 
-It is completely passive. It cannot read internet. Think of it as a Highly advanced statistical calculator that was merged with the ZIP Archive of the entire Internet.
-Which in the end will not do anything by itself until you press the button.
-So The model by itself is absolutely passive Bunch of Archived data In form of mathematical matrices.
+It is completely passive bunch of data. It cannot read internet. It doesn't do any actions. 
+Think of it as a Highly advanced statistical calculator that was merged with the ZIP Archive of the entire Internet.
+Which in the end will not do anything on its own until you press the button.
+So The model by itself is absolutely passive file of Archived data In form of mathematical matrices.
 
 Okay, we got it, it's sort of a zip file, but what's inside it? 
 How is it going to conquer the world, right? Or at least make that impression.
