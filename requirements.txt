@@ -5,7 +5,8 @@ openai
 sentence_transformers
 umap-learn
 plotly
-manim
+#manim
+manim==0.17.3
 manim-slides
 #manim-ipython
 jupyterlab

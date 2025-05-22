@@ -26,3 +26,6 @@ pip install -r requirements.txt
 python -m venv myenv
 myenv/Scripts/activate
 
+# Running manim script:
+manim -pql 0.instructor-personal-data/lesson-1/manim-test.py VectorProjectionVisualization
+

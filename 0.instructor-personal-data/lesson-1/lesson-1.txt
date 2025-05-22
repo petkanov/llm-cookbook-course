@@ -10,19 +10,43 @@ everywhere nowadays is spammed with these two letters "A.I.". So much hype, it's
 There are even people for which this even looks like some sort of a mysterious intelligent entity that is living somewhere in a box! 
 But once we drill down into the reality behind the "AI" label and strip away all the marketing hype 
 - you will see there is absolutely nothing intelligent about it. 
-These models in their original base form are not reasoning, they are not having insights or understanding the world like we do. 
-In its essence under the hood - It's just a sophisticated statistical calculator that is spitting off the next most likely word to follow.
+These models in their original Base form are not reasoning, they are not having insights or understanding the world like we do. 
+In its essence, under the hood - It's just a sophisticated statistical calculator that is spitting off the next most likely word to follow.
+So we are definitely not in any kind of danger that these calculators will take over the world.
+However, your job could be at risk. It's not that AI will replace humans, 
+but rather that people who know how to use AI will easily replace those who don't. 
+If you’re not actively using AI in your daily work, you may find yourself left behind.
 
 [Visual: Animation of a black box labeled "AI". The box opens to reveal gears, numbers, and a calculator inside.]
 
-So what's really happening and where does it all begin?
-Inside the LLM, it's all about predicting the next word — well, actually, not even the whole word. 
+[Manim: Show a probability distribution curve that morphs as words are generated. As one word appears, the curve shifts to show the changing probability distribution for the next possible tokens.]
+But let's get back to our main story.
+ So what's really happening inside the LL4Ms - the main driving force powering the AI revolution? 
+Where does this process actually start? 
+How does a simple piece of text get transformed into what feels like an intelligent response? 
+Let's explore where it all begins.
+
+The first important distinction we need to make clear is that the model itself—like GPT-4o 
+and the application that users interact with—like ChatGPT, which uses this model—are very different things.
+ChatGPT, or any similar application, consists of many additional layers that do not exist within the model itself. 
+These include features like memory, agents, tools, and many other components that make Applications like ChatGPT 
+so useful, intelligent and fluent.
+The LLM model itself is more of a like extremely sophisticated archive of the entire internet. 
+It is completely passive. It cannot read internet. Think of it as a Highly advanced statistical calculator that was merged with the ZIP Archive of the entire Internet.
+Which in the end will not do anything by itself until you press the button.
+So The model by itself is absolutely passive Bunch of Archived data In form of mathematical matrices.
+
+Okay, we got it, it's sort of a zip file, but what's inside it? 
+How is it going to conquer the world, right? Or at least make that impression.
+So Inside the Large language models, it's all about predicting the next word — well, actually, not even the whole word. 
 Most of the time, it's just a fragment of a word, that is called a token. 
 And each token corresponds to a number. And the model's job is to spit out one number at a time 
-using statistical mathematics, based on everything it has already predicted prior to that word.
+using statistical mathematics. It does this based on everything it has already predicted prior to that word.
 So the main task of LLM is to predict the next token, based on all previously predicted tokens.
 
 [Visual: Close-up animation of a sentence being typed, but each word appears as a sequence of colored blocks (tokens). Each block flashes as it is "predicted".]
+
+[Manim: Visualization of tokenization: show a sentence being split into tokens, each token transforming into its numerical representation. Then show vectors in a high-dimensional space representing these tokens with arrows pointing to the next most probable token.]
 
 [Slide: "AI" = statistical prediction, not human thinking]
 
@@ -32,7 +56,9 @@ You will understand not only how this imitation of an intelligent output is gene
 but also how you can use these tools in your own projects, so that you can build applications that are smart, 
 extremely powerful and can make a real difference in the world.
 
-[Visual: Split screen. Left: Human brain with lightbulbs and ideas. Right: Computer with numbers and graphs. Text: "Pattern matching, not thinking"]
+[Visual: Split screen. Left side: a human brain with lightbulbs and creative ideas around it. Right side: a robot that looks like a mix between a calculator and a robot (robotic body with calculator buttons, display, and mechanical features), surrounded by numbers, graphs, and data visualizations. Add the text: "Pattern matching, not thinking". Make sure the human brain is only on the left, and the robot-calculator hybrid is only on the right, with no brain elements on the right side.]
+
+[Manim: Animated Markov chain showing how probabilities flow through a sequence of tokens, with conditional probability formulas appearing and evolving alongside the visualization.]
 
 Now let's start our AI exploration journey and together, we are going to debunk 
 the myth of intelligence in this "AI" Marketing term — and, more importantly,
@@ -56,6 +82,8 @@ So now we got our first problem - how do we actually collect and prepare that ma
 
 [Visual: Giant funnel graphic. At the top: icons for books, websites, forums, chats. At the bottom: a hard drive labeled "Training Data".]
 
+[Manim: Visualization of exponential growth curve showing data scale, with animated counter displaying gigabytes growing to terabytes, alongside visualization of token count growing to billions.]
+
 And we are talking about collecting data in the scale of tens of terabytes, that contains hundreds of billions of words.
 The most famous and available example of something that we are looking for - is the FineWeb dataset, that's managed by Hugging Face.
 It's exactly what we need - a filtered, high quality set of internet text that weighs in at around 44 terabytes.
@@ -71,7 +99,9 @@ Since I think 2007, this Common Crawl has been systematically reading and archiv
 And by now, it has crawled nearly 3 billion web pages.
 But this isn't just about website addresses — no, - it's their entire content: which is articles, documentation, forums, chats and more.
 
-[Visual: Animation of a spider or robot crawling across a globe, collecting web pages into a giant digital library.]
+[Visual: Illustration of a robot spider crawling traversing the internet, collecting web pages into a giant digital library.]
+
+[Manim: Graph theory visualization showing a network of interconnected nodes representing websites, with crawler paths highlighted as they traverse the graph, with counters tracking visited pages and data collected.]
 
 But of course, not every piece of internet text is useful, or even worth feeding into our model.
 Raw web data is really messy. Think of this - it includes spam, duplicated copy-paste pages, messed up low-quality content, 
@@ -91,6 +121,8 @@ That's because all those websites from that list are known for malware, spam, ad
 
 [Visual: List of URLs on screen, some highlighted in red and crossed out. Overlay: "BLOCKED" stamp.]
 
+[Manim: Set theory visualization showing Venn diagrams of total web content and filtered content, with mathematical notation for set operations (union, intersection, difference) as content is filtered.]
+
 Ok, so we managed to avoid a few forbidden websites, we scraped the others and now we got all that websites data.
 So what's next? 
 Next we need to extract the actual text from HTML markup.
@@ -106,6 +138,8 @@ A common threshold is to require that at least 65% of a website content should b
 [Slide: Language filtering – Pie chart: >65% English]
 [Visual: Pie chart animation showing a slice labeled "English" growing to 65% or more.]
 
+[Manim: Statistical sampling visualization showing how language detection algorithms work with confidence intervals and thresholds, with mathematical notation for statistical significance.]
+
 Okay, now we got a text, we filtered away all the unnecessary code and data. 
 And now we ended up with a nice and clean English text only. 
 But we're still not finished. No Sir.
@@ -116,7 +150,9 @@ To do this we will run algorithms to remove not only repeated text fragments but
 This will later on help our model to grasp general rules from that data, so it can generalize and solve new situations instead of just memorizing old answers.
 We need to make sure that our model can learn underlying principles, and not just specific examples.
 
-[Visual: Animation of two nearly identical documents. One is deleted, the other remains. Overlay: "De-duplication".]
+[Visual: Illustration of two nearly identical documents. One is deleted, the other remains. Overlay: "De-duplication".]
+
+[Manim: Algorithm visualization showing similarity metrics between documents using cosine similarity, with vectors in space moving closer together when documents are similar, and a threshold line showing when documents are considered duplicates.]
 
 So after we've done all this filtration, what is left?
 The end goal is a massive, diverse, and high-quality collection of texts that will serve as
@@ -125,13 +161,15 @@ from Shakespeare to Stack Overflow, from medical research to sci-fi fan fiction.
 It's not just a size that matters, but also quality and breadth.
 
 [Recap Slide: Data pipeline – Raw crawl → Filtered text → Large, diverse, high-quality corpus]
-[Visual: Flowchart animation. Step 1: Raw crawl (messy web). Step 2: Filtering (blocklists, language, deduplication). Step 3: Final dataset (books, code, articles, etc.)]
+[Visual: Flowchart Illustration. Step 1: Raw crawl (messy web). Step 2: Filtering (blocklists, language, deduplication). Step 3: Final dataset (books, code, articles, etc.)]
 
 But why go to all this effort?
 Well because a well-built language model learns not just words, but also context, common sense and even 
 hidden connections like underlying relationships between words and phrases or ideas and concepts.
 
 [Visual: Network diagram showing words and concepts connected by lines, some lines glowing to show "hidden connections".]
+
+[Manim: Word embedding visualization in 3D space, showing how semantically similar words cluster together, with mathematical transformation equations showing how words become vectors.]
 
 And all of this thanks to starting off from an excellent data.
 
@@ -144,6 +182,8 @@ And without this foundation, even the most advanced neural networks would be los
 
 [Outro Slide: Up Next – How is all this data represented and visualized?]
 [Visual: Books and articles morphing into numbers, vectors, or colorful data points.]
+
+[Manim: Final mathematical animation showing the entire pipeline from raw text to token vectors to neural network processing, with mathematical notations for each transformation step.]
 
 Well, great, thank you for tuning in and in the next video, we will see what happens next, after we've got this gigantic digital library:
 Like how do we actually represent all this text so that a computer Program, our model can start learning from it?
