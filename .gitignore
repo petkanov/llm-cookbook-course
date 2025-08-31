@@ -8,3 +8,4 @@ media/
 *.log
 venv2/
 _under-construction/
+.DS_Store
